@@ -70,6 +70,16 @@ class SELU():
     def gradient(self, x):
         return self.scale * np.where( x >= 0.0, 1, self.alpha * np.exp(x))
 
+
+class SoftPlus():
+    def __call__(self, x):
+        return np.log(1 + np.exp(x))
+
+    def gradient(self, x):
+        return 1 / (1 + np.exp(-x))
+
+        
+
 if __name__ == "__main__":
     x = np.linspace(-1,1,10)
     activation = ReLU()
