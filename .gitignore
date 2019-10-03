@@ -1,2 +1,5 @@
 # ignore all jupyter
 *.ipynb
+
+# ignore pycache directory
+./__pycache__
